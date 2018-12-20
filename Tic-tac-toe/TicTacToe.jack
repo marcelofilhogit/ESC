@@ -1,0 +1,416 @@
+class TicTacToe{
+    field boolean gOver;
+    constructor TicTacToe new(){
+        let gOver = false;
+        return this;
+    }
+
+    method void gameOver(){
+		do Output.moveCursor(12, 25);
+		do Output.printString("GAME OVER");
+		do Output.println();
+		return;
+	}
+
+    method void jogar(){
+		var char key;
+		var boolean exit;
+        var bool jogador;
+        var int um;
+        var int dois;
+        var int tres;
+        var int quatro;
+        var int cinco;
+        var int seis;
+        var int sete;
+        var int oito;
+        var int nove;
+        var bool fim;
+        var int state;
+        // var int indice;
+        var Array contador;
+
+        let um = 0;
+        let dois = 0;
+        let tres = 0;
+        let quatro = 0;
+        let cinco = 0;
+        let seis = 0;
+        let sete = 0;
+        let oito = 0;
+        let nove = 0;
+		let exit = false;
+        let jogador = false;
+        let fim = false;
+        let state = 0;
+        // let indice = 0;
+        let contador = Array.new(9);
+        let contador[0] = 0;
+        let contador[1] = 0;
+        let contador[2] = 0;
+        let contador[3] = 0;
+        let contador[4] = 0;
+        let contador[5] = 0;
+        let contador[6] = 0;
+        let contador[7] = 0;
+        let contador[8] = 0;
+
+        while((~exit) & (~(state=9)) ){
+            // let indice = indice + 1;
+
+            //Seleciona o jogador para jogar
+            if(jogador = true){
+                do Output.println();
+                do Output.moveCursor(1, 27);
+                do Output.printString("jogador 2");
+            }
+
+            else{
+                do Output.println();
+                do Output.moveCursor(1, 27);
+                do Output.printString("jogador 1");
+            }
+
+
+            while((key = 0) & (~exit) ){
+                let key = Keyboard.keyPressed();
+
+                if(gOver){
+                    do gameOver();
+                    let exit = true;
+                }
+            }
+
+            // ESC para o jogo acabar
+            if(key = 140){
+                let exit = true;
+            }
+
+            // Tecla 1
+            if(key = 49){
+                if(um = 0){
+                    if(jogador = true){
+                        do GameCharacters.drawBolinha(1);
+                        let contador[0] = 2;
+                    }
+
+                    else{
+                        do GameCharacters.drawX(1);
+                        let contador[0] = 1;
+                    }
+
+                    let jogador = ~jogador;
+                    let state = state + 1;
+                }
+
+                let um = um + 1;
+            }
+
+            // Tecla 2
+            if(key = 50){
+                if(dois = 0){
+                    if(jogador = true){
+                        do GameCharacters.drawBolinha(2);
+                        let contador[1] = 2;
+                    }
+
+                    else{
+                        do GameCharacters.drawX(2);
+                        let contador[1] = 1;
+                    }
+
+                    let jogador = ~jogador;
+                    let state = state + 1;
+                }
+
+                let dois = dois + 1;
+            }
+
+            // Tecla 3
+            if(key = 51){
+                if(tres = 0){
+                    if(jogador = true){
+                        do GameCharacters.drawBolinha(3);
+                        let contador[2] = 2;
+                    }
+
+                    else{
+                        do GameCharacters.drawX(3);
+                        let contador[2] = 1;
+                    }
+
+                    let jogador = ~jogador;
+                    let state = state + 1;
+                }
+
+                let tres = tres + 1;
+            }
+
+            // Tecla 4
+            if(key = 52){
+                if(quatro = 0){
+                    if(jogador = true){
+                        do GameCharacters.drawBolinha(4);
+                        let contador[3] = 2;
+                    }
+
+                    else{
+                        do GameCharacters.drawX(4);
+                        let contador[3] = 1;
+                    }
+
+                    let jogador = ~jogador;
+                    let state = state + 1;
+                }
+
+                let quatro = quatro + 1;
+            }
+
+            // Tecla 5
+            if(key = 53){
+                if(cinco = 0){
+                    if(jogador = true){
+                        do GameCharacters.drawBolinha(5);
+                        let contador[4] = 2;
+                    }
+
+                    else{
+                        do GameCharacters.drawX(5);
+                        let contador[4] = 1;
+                    }
+
+                    let jogador = ~jogador;
+                    let state = state + 1;
+                }
+
+                let cinco = cinco + 1;
+            }
+
+            // Tecla 6
+            if(key = 54){
+                if(seis = 0){
+                    if(jogador = true){
+                        do GameCharacters.drawBolinha(6);
+                        let contador[5] = 2;
+                    }
+
+                    else{
+                        do GameCharacters.drawX(6);
+                        let contador[5] = 1;
+                    }
+
+                    let jogador = ~jogador;
+                    let state = state + 1;
+                }
+
+                let seis = seis + 1;
+            }
+
+            // Tecla 7
+            if(key = 55){
+                if(sete = 0){
+                    if(jogador = true){
+                        do GameCharacters.drawBolinha(7);
+                        let contador[6] = 2;
+                    }
+
+                    else{
+                        do GameCharacters.drawX(7);
+                        let contador[6] = 1;
+                    }
+
+                    let jogador = ~jogador;
+                    let state = state +1;
+                }
+
+                let sete = sete + 1;
+            }
+
+            // Tecla 8
+            if(key = 56){
+                if(oito = 0){
+                    if(jogador = true){
+                        do GameCharacters.drawBolinha(8);
+                        let contador[7] = 2;
+                    }
+
+                    else{
+                        do GameCharacters.drawX(8);
+                        let contador[7] = 1;
+                    }
+
+                    let jogador = ~jogador;
+                    let state = state + 1;
+                }
+
+                let oito = oito + 1;
+            }
+
+            // Tecla 9
+            if(key = 57){
+                if(nove = 0){
+                    if(jogador = true){
+                        do GameCharacters.drawBolinha(9);
+                        let contador[8] = 2;
+                    }
+
+                    else{
+                        do GameCharacters.drawX(9);
+                        let contador[8] = 1;
+                    }
+
+                    let jogador = ~jogador;
+                    let state = state + 1;
+                }
+
+                let nove = nove + 1;
+            }
+
+            //Compra qual jogador venceu
+
+            // Primeira linha
+            if((contador[0] = contador[1]) & (contador[1] = contador[2]) & (contador[1] > 0)){
+                do Output.println();
+                do Output.moveCursor(3, 24);
+
+                if(contador[0] = 1){
+                    do Output.printString("Jogador 1 venceu");
+                }
+
+                else{
+                    do Output.printString("Jogador 2 venceu");
+                }
+
+                let state = 9;
+            }
+
+            // Segunda linha
+            if((contador[3] = contador[4]) & (contador[4] = contador[5]) & (contador[3] > 0) ){
+                do Output.println();
+                do Output.moveCursor(3, 24);
+
+                if(contador[3] = 1){
+                    do Output.printString("Jogador 1 venceu");
+                }
+
+                else{
+                    do Output.printString("Jogador 2 venceu");
+                }
+
+                let state = 9;
+            }
+
+            // Terceira linha
+            if((contador[6] = contador[7]) & (contador[7] = contador[8]) & (contador[6] > 0)){
+                do Output.println();
+                do Output.moveCursor(3, 24);
+
+                if(contador[6] = 1){
+                    do Output.printString("Jogador 1 venceu");
+                }
+
+                else{
+                    do Output.printString("Jogador 2 venceu");
+                }
+
+                let state = 9;
+            }
+
+            //Linha diagonal princial
+            if((contador[0] = contador[4]) & (contador[4] = contador[8]) & (contador[4] > 0)){
+                do Output.println();
+                do Output.moveCursor(3, 24);
+
+                if(contador[0] = 1){
+                    do Output.printString("Jogador 1 venceu");
+                }
+
+                else{
+                    do Output.printString("Jogador 2 venceu");
+                }
+
+                let state = 9;
+            }
+
+            //Linha diagonal secundaria
+            if((contador[2] = contador[4]) & (contador[4] = contador[6]) & (contador[2] > 0)){
+                do Output.println();
+                do Output.moveCursor(3, 24);
+
+                if(contador[2] = 1){
+                    do Output.printString("Jogador 1 venceu");
+                }
+
+                else{
+                    do Output.printString("Jogador 2 venceu");
+                }
+
+                let state = 9;
+            }
+
+            //Primeira coluna
+            if((contador[0] = contador[3]) & (contador[3] = contador[6]) & (contador[0] > 0)){
+                do Output.println();
+                do Output.moveCursor(1, 24);
+
+                if(contador[0] = 1){
+                    do Output.printString("Jogador 1 venceu");
+                }
+
+                else{
+                    do Output.printString("Jogador 2 venceu");
+                }
+
+                let state=9;
+            }
+
+            //Segunda coluna
+            if((contador[1] = contador[4]) & (contador[4] = contador[7]) & (contador[7] > 0)){
+                do Output.println();
+                do Output.moveCursor(3, 24);
+
+                if(contador[1] = 1){
+                    do Output.printString("Jogador 1 venceu");
+                }
+
+                else{
+                    do Output.printString("Jogador 2 venceu");
+                }
+
+                let state=9;
+            }
+
+            //Terceiraa coluna
+            if((contador[2] = contador[5]) & (contador[5] = contador[8]) & (contador[8] > 0)){
+                do Output.println();
+                do Output.moveCursor(3, 24);
+
+                if(contador[2] = 1){
+                    do Output.printString("Jogador 1 venceu");
+                }
+
+                else{
+                    do Output.printString("Jogador 2 venceu");
+                }
+
+                let state = 9;
+            }
+
+            while (~(key = 0) & (~exit)) {
+                let key = Keyboard.keyPressed();
+
+                if(gOver){
+                    do gameOver();
+                    let exit = true;
+                }
+            }
+
+        }
+
+        do Output.println();
+        do Output.moveCursor(1, 24);
+        do Output.printString("O jogo acabou");
+
+	    return;
+    }
+}
